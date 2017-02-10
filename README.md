@@ -4,6 +4,8 @@
 
 Step 1. Run command ```composer update```.
 
-Step 2. Create database ```cakephp``` and table ```user``` with list field ```[id, name, email]```.
+Step 2. Create database ```cakephp``` and table ```user``` with list field ```[id, name, email,birthday,image,note]```.
 
-Open browser http://localhost/cakephp/user
+Open browser http://localhost/cakephp/
+
+
