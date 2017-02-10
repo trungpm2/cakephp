@@ -55,6 +55,7 @@ Router::scope('/', function (RouteBuilder $routes) {
      * ...and connect the rest of 'Pages' controller's URLs.
      */
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
+    $routes->connect('/about/*', ['controller' => 'About', 'action' => 'index']);
 
     /**
      * Connect catchall routes for all controllers.
@@ -74,6 +75,14 @@ Router::scope('/', function (RouteBuilder $routes) {
      */
 
     $routes->fallbacks(DashedRoute::class);
+});
+Router::prefix('admin',['controller' => 'Admin'], function($routes){
+
+    $routes->connect('/', ['action' => 'index']);
+    $routes->connect('/:action');
+    // $routes->connect('/dashboard', ['controller' => 'Admin', 'action' => 'dashboard']);
+    // $routes->connect('/error404', ['controller' => 'Admin', 'action' => 'error404']);
+    
 });
 
 Router::prefix('user', function($routes){

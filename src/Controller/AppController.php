@@ -59,4 +59,7 @@ class AppController extends Controller
             $this->set('_serialize', true);
         }
     }
+    public function setFlash($message, $element = 'default', $params = array(), $key = 'flash') {
+        CakeSession::write('Message.' . $key, compact('message', 'element', 'params'));
+    }
 }
